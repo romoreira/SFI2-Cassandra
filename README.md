@@ -1,1 +1,1 @@
-# SFI2-Cassandra
+# SFI2 Cassandra
