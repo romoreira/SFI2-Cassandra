@@ -1,0 +1,23 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: cassandra-vs
+spec:
+  hosts:
+  - cassandra
+  http:
+  - route:
+    - destination:
+        host: cassandra
+        subset: pod-0 # Primeiro pod do StatefulSet
+      weight: 40
+    - destination:
+        host: cassandra
+        subset: pod-1 # Segundo pod do StatefulSet
+      weight: 40
+    - destination:
+        host: cassandra
+        subset: pod-2 # Terceiro pod do StatefulSet
+      weight: 20
+    mirror:
+      host: cassandra-mirror
