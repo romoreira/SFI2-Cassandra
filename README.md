@@ -1,6 +1,9 @@
 # SFI2 Cassandra
 
-Installing Istio
+### Exposing Cassandra
+`kubectl expose deployment mlagent --type=LoadBalancer --name=mlagent
+
+### Installing Istio
 
 1. `$ curl -L https://istio.io/downloadIstio | sh -`
 2. `cd istio-1.17.3`
