@@ -99,6 +99,10 @@ def start_flowmeter_alone():
 def stop_flowmeter():
     command = f"ps aux | grep cicflowmeter | grep -v grep | awk '{{print $2}}' | xargs kill -9"
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+    command = f"rm -rf /home/flows.csv"
+    process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
     return {'status': 'ok', 'result': str("FlowMeter is not Running")}, 200
 
 @app.route('/download', methods=['GET'])

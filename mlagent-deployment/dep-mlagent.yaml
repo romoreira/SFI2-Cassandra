@@ -16,6 +16,7 @@ spec:
         - name: mlagent
           image: moreirar/mlagent:v2
           imagePullPolicy: IfNotPresent
+          #imagePullPolicy: Always
           ports:
             - containerPort: 3000  # Port to expose on the container
           resources:

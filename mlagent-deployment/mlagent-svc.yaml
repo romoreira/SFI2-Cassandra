@@ -1,14 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
+  name: mlagent
   labels:
     app: mlagent
-  name: mlagent
+    version: v2
 spec:
-  type: LoadBalancer
-  ports:
-  - port: 3000
-    name: mlagent
   selector:
     app: mlagent
-    version: v2
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+  type: LoadBalancer
