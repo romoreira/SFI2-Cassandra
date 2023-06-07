@@ -8,6 +8,7 @@ COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 COPY flow.py /usr/local/lib/python3.10/dist-packages/cicflowmeter/
 COPY flow_session.py /usr/local/lib/python3.10/dist-packages/cicflowmeter/
+COPY controller.py /home/
 COPY entrypoint.sh .
 RUN chmod +x entrypoint.sh
 ENTRYPOINT ["./entrypoint.sh"]
