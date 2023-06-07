@@ -63,7 +63,7 @@ class ThreadedFlowMeterAlone(threading.Thread):
 
     def run(self):
         # command cicflowmeter -i enp2s0 -c flows.csv -u http://192.168.0.212:8080/prediction
-        cmd = 'cicflowmeter -i eth0 -c flows.csv'
+        cmd = 'cicflowmeter -i eth0 -c /home/flows.csv'
         p = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
 
 
