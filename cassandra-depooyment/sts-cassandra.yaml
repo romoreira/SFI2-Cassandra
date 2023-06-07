@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: cassandra
-          image: cassandra:3
+          image: gcr.io/google-samples/cassandra:v13
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 7000
@@ -61,7 +61,7 @@ spec:
       name: cassandra-pvc
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: managed
+      storageClassName: managed-premium
       resources:
         requests:
           storage: 1Gi
