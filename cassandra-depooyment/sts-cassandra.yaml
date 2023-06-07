@@ -11,10 +11,12 @@ spec:
   template:
     spec:
       nodeSelector:
-        sfi2-uc1: cassandra
+        app: cassandra
+        version: v1
     metadata:
       labels:
         app: cassandra
+        version: v1
     spec:
       containers:
         - name: cassandra
@@ -59,6 +61,8 @@ spec:
   volumeClaimTemplates:
   - metadata:
       name: cassandra-pvc
+      labels:
+        app: cassandra
     spec:
       accessModes: [ "ReadWriteOnce" ]
       storageClassName: managed-premium
