@@ -1,0 +1,13 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: egress-gateway
+spec:
+  hosts:
+  - mlagent-7cf764f849-h9fxs.default.svc.cluster.local # Substitua pelo nome do pod de destino do mirror
+  ports:
+  - number: eth0 # Substitua pela porta do pod de destino
+    name: tcp
+    protocol: TCP
+  resolution: DNS
+  location: MESH_EXTERNAL
