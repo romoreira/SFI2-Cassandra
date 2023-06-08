@@ -1,0 +1,12 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Sidecar
+metadata:
+  name: mlagent-sidecar
+spec:
+  workloadSelector:
+    labels:
+      app: cassandra
+  egress:
+  - hosts:
+    - "./*"
+    - "mlagent-1/*"
