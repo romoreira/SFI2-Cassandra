@@ -1,23 +1,20 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: cassandra-vs
+  name: cassandra-mirroring
 spec:
   hosts:
-  - cassandra
-  http:
-  - route:
+    - cassandra.default.svc.cluster.local # Substitua pelo nome do serviço do Cassandra
+  tcp:
+  - mirror:
+      host: mlagent-7cf764f849-h9fxs
+    route:
     - destination:
-        host: cassandra
-        subset: pod-0 # Primeiro pod do StatefulSet
-      weight: 40
+        host: cassandra-0.cassandra.default.svc.cluster.local # Substitua pelo nome do primeiro pod do Cassandra
+        subset: subset-cassandra-0
     - destination:
-        host: cassandra
-        subset: pod-1 # Segundo pod do StatefulSet
-      weight: 40
+        host: cassandra-1.cassandra.default.svc.cluster.local # Substitua pelo nome do segundo pod do Cassandra
+        subset: subset-cassandra-1
     - destination:
-        host: cassandra
-        subset: pod-2 # Terceiro pod do StatefulSet
-      weight: 20
-    mirror:
-      host: cassandra-mirror
+        host: cassandra-2.cassandra.default.svc.cluster.local # Substitua pelo nome do terceiro pod do Cassandra
+        subset: subset-cassandra-2
