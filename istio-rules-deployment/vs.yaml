@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: web-mirror-vs
+spec:
+  hosts:
+    - cassandra.default.svc.cluster.local
+  http:
+  - route:
+    - destination:
+        host: cassandra-0.default.svc.cluster.local
+        host: cassandra-1.default.svc.cluster.local
+        host: cassandra-2.default.svc.cluster.local
+        subset: v1
+      weight: 100
+    mirror:
+      host: mlagent-7845f4b979-wnj8n.default.svc.cluster.local
+      subset: v2
+    mirror_percent: 100
