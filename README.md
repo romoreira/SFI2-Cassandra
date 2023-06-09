@@ -1,5 +1,26 @@
 # SFI2 Cassandra
 
+### Installing Ksniff on Kubernetes cluster
+
+0. Install Pcap: `libpcap-dev`
+1. Need to install Krew:
+'''
+(
+  set -x; cd "$(mktemp -d)" &&
+  OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
+  ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
+  KREW="krew-${OS}_${ARCH}" &&
+  curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
+  tar zxvf "${KREW}.tar.gz" &&
+  ./"${KREW}" install krew
+)
+'''
+
+2. `export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"`
+3. Test the installation: `kubectl krew`
+4. Install the sniff: `kubectl krew install sniff`
+
+
 ### Building ML Agent Docker Image (DockerHub)
 
 0. `docker login --username=<username>`
