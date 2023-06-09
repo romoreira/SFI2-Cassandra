@@ -4,7 +4,8 @@
 
 0. Install Pcap: `libpcap-dev`
 1. Need to install Krew:
-'''
+
+```
 (
   set -x; cd "$(mktemp -d)" &&
   OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
@@ -14,7 +15,8 @@
   tar zxvf "${KREW}.tar.gz" &&
   ./"${KREW}" install krew
 )
-'''
+```
+> https://osm-download.etsi.org/ftp/osm-10.0-ten/OSM-MR11-hackfest/presentations/OSM-MR%2311%20Hackfest%20OAI%20Onboarding%20Demo%20-%20Team%20Suny%20Poly%20(Part%202).pdf
 
 2. `export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"`
 3. Test the installation: `kubectl krew`
