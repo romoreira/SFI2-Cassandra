@@ -74,7 +74,7 @@ This project brings the concept of ML-Agent to add intrinsic security for networ
 ### How to cite this work? :newspaper:
 
 ```bibtex
-@inproceedings{wpeif,
+@inproceedings{moreira2023,
 author = {Rodrigo Moreira and Tereza Carvalho and Flávio Silva},
 title = {Designing and Evaluating a high-reliable and security-aware Identity and Access Management for Slicing Architectures},
 booktitle = {Anais do XIV Workshop de Pesquisa Experimental da Internet do Futuro},
