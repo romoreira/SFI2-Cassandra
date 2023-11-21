@@ -1,4 +1,11 @@
-# SFI2 Cassandra
+# SFI2: Native Machine Learning for Network Slicing Architectures :computer:
+
+Developed by Rodrigo M.  <br>
+[![](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=GitHub%20Pages&logoColor=white)](https://romoreira.github.io)
+
+
+This project brings the concept of ML-Agent to add intrinsic security for network slicing reference architectures. The idea is based on sidecar containers that are instantiated along with the core architecture.
+
 
 ### Installing Ksniff on Kubernetes cluster
 
@@ -57,3 +64,27 @@
 ### Mirroring Traffic of Cassandra to MLAgent through Istio
 
 1. `kubectl apply -f virtual-service.yaml`
+
+
+## Financial Support :moneybag:
+
+* [FAPESP](https://fapesp.br/)
+
+
+### How to cite this work? :newspaper:
+
+```bibtex
+@inproceedings{wpeif,
+author = {Rodrigo Moreira and Tereza Carvalho and Flávio Silva},
+title = {Designing and Evaluating a high-reliable and security-aware Identity and Access Management for Slicing Architectures},
+booktitle = {Anais do XIV Workshop de Pesquisa Experimental da Internet do Futuro},
+location = {Brasília/DF},
+year = {2023},
+issn = {2595-2692},
+pages = {1--6},
+publisher = {SBC},
+address = {Porto Alegre, RS, Brasil},
+doi = {10.5753/wpeif.2023.722},
+url = {https://sol.sbc.org.br/index.php/wpeif/article/view/24653}
+}
+```
