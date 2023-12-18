@@ -28,7 +28,7 @@ This project brings the concept of ML-Agent to add intrinsic security for networ
 2. `export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"`
 3. Test the installation: `kubectl krew`
 4. Install the sniff: `kubectl krew install sniff`
-5. `kubectl sniff -n default ubuntu -p -o captura.pcap`
+5. `kubectl sniff -n default ubuntu -p -i eth0 -o captura.pcap`
 
 
 ### Building ML Agent Docker Image (DockerHub)
